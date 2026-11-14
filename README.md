@@ -31,9 +31,12 @@ npm run preview # Sirve la compilación para comprobarla
 index.html          Secciones, itinerario, hoteles y contenido de la página
 src/
   data/trip.js      Tarifas, supuestos, tramos y pendientes del alquiler
+  data/car.js       Fotos, textos alternativos y títulos de la galería
   lib/budget.js     Cálculos reutilizables del presupuesto
+  lib/motion.js     Nieve, entrada de secciones y preferencias de movimiento
+  lib/gallery.js    Selector de fotos y ampliación accesible
   main.js           Controles, resultados, enlaces e invitación
-  styles/main.css   Diseño adaptable, accesibilidad e impresión
+  styles/           Diseño adaptable, galería, animaciones e impresión
 public/images/      Fotos locales y foto del Tiguan
 tests/              Pruebas con el runner nativo de Node.js
 docs/planning.md    Supuestos, límites y puntos por confirmar
@@ -53,4 +56,8 @@ Vercel puede desplegar automáticamente cada cambio de la rama de producción y 
 
 Todos los precios son estimaciones en CAD, no reservas. El sitio es público para quien tenga su enlace: no añadas confirmaciones, datos personales, tarjetas ni documentos del seguro.
 
-Las fotografías de destinos se distribuyen con el proyecto y conservan los enlaces, autores y licencias indicados en el pie de página del documento original. La foto del Tiguan procede de la captura del anuncio Turo aportada por el usuario; revisa el permiso de reutilización si se distribuye fuera de este plan del viaje. Consulta [los supuestos del viaje](docs/planning.md).
+Las fotografías de destinos se distribuyen con el proyecto y conservan los enlaces, autores y licencias indicados en el pie de página del documento original. Las fotos del Tiguan y los retratos proceden de imágenes aportadas por el usuario, con mejoras y recortes realizados con una herramienta de edición de imágenes; revisa el permiso de reutilización si se distribuye fuera de este plan del viaje. Consulta [los supuestos del viaje](docs/planning.md).
+
+## Movimiento y galería
+
+El botón **Pause motion** detiene la nieve, el balanceo de stickers y el trazado animado de la ruta. La preferencia se recuerda en el navegador, si permite almacenamiento local. El sitio respeta `prefers-reduced-motion`, detiene animaciones al cambiar de pestaña y muestra el contenido completo al imprimir. La galería del auto admite teclado; la vista ampliada se cierra con **Escape** o el botón **Close**. Las fotos WebP se sirven localmente.

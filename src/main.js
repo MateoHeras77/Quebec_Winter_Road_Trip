@@ -1,4 +1,6 @@
 import { trip, directionsUrl } from "./data/trip.js";
+import { initializeMotion } from "./lib/motion.js";
+import { initializeGallery } from "./lib/gallery.js";
 import {
   calculateBudget,
   money,
@@ -149,3 +151,5 @@ $("copyInvite").addEventListener("click", async () => {
   );
 });
 update();
+initializeMotion();
+initializeGallery();

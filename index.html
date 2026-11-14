@@ -10,6 +10,8 @@
     />
     <title>The Great Québec Loop | Mateo & Daniela's Winter Road Trip</title>
     <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="stylesheet" href="/src/styles/motion.css" />
+    <link rel="stylesheet" href="/src/styles/gallery.css" />
   </head>
   <body>
     <header class="topbar">
@@ -20,34 +22,60 @@
           ><a href="#itinerary">The route</a><a href="#car">Our ride</a
           ><a href="#budget">Trip cost</a><a href="#join">Join us ↗</a>
         </nav>
+        <button
+          id="motionToggle"
+          class="motion-toggle"
+          type="button"
+          aria-pressed="false"
+        >
+          Pause motion
+        </button>
       </div>
     </header>
     <main id="home">
       <section class="hero">
+        <div class="snowfall" aria-hidden="true"></div>
         <div class="container">
-          <div class="eyebrow" style="color: #f6cc96">
-            YOUR INVITATION TO WINTER MAGIC
+          <div class="hero-copy">
+            <div class="eyebrow" style="color: #f6cc96">
+              YOUR INVITATION TO WINTER MAGIC
+            </div>
+            <h1 class="headline">
+              Snowy roads.<br />Great stories.<br />Good company.
+            </h1>
+            <p class="lead">
+              Mateo &amp; Daniela are heading from Toronto to Québec City,
+              Montréal and Ottawa — with charming little towns, holiday lights,
+              cozy cafés and <b>two seats open for friends.</b>
+            </p>
+            <div class="actions">
+              <a href="#budget" class="button primary"
+                >💸 See your daily cost <span aria-hidden="true">→</span></a
+              ><a class="button secondary" href="#itinerary"
+                >Explore the adventure</a
+              >
+            </div>
+            <div class="pills">
+              <span class="pill">📅 Dec 23, 2026 – Jan 3, 2027</span
+              ><span class="pill">🚙 Winter road trip</span
+              ><span class="pill">✨ 2 open seats</span>
+            </div>
           </div>
-          <h1 class="headline">
-            Snowy roads.<br />Great stories.<br />Good company.
-          </h1>
-          <p class="lead">
-            Mateo &amp; Daniela are heading from Toronto to Québec City,
-            Montréal and Ottawa — with charming little towns, holiday lights,
-            cozy cafés and <b>two seats open for friends.</b>
-          </p>
-          <div class="actions">
-            <a href="#budget" class="button primary"
-              >💸 See your daily cost <span aria-hidden="true">→</span></a
-            ><a class="button secondary" href="#itinerary"
-              >Explore the adventure</a
-            >
-          </div>
-          <div class="pills">
-            <span class="pill">📅 Dec 23, 2026 – Jan 3, 2027</span
-            ><span class="pill">🚙 Winter road trip</span
-            ><span class="pill">✨ 2 open seats</span>
-          </div>
+          <figure class="crew-sticker">
+            <div class="crew-stamp">❄ SNOW MODE: ON</div>
+            <img
+              src="/images/mateo-daniela-stickers.webp"
+              width="1448"
+              height="1086"
+              alt="Mateo and Daniela wearing sunglasses, ready for their winter road trip"
+              fetchpriority="high"
+            />
+            <figcaption>
+              <span>Mateo <b>&amp;</b> Daniela</span
+              ><small>Your road-trip crew. Just add snow.</small>
+            </figcaption>
+            <span class="crew-doodle" aria-hidden="true">✦</span>
+          </figure>
         </div>
         <div class="heroPhoto">
           Real photo: Rue du Petit-Champlain · Wikimedia Commons
@@ -405,11 +433,32 @@
           <div class="eyebrow">Our ride</div>
           <h2 class="sectionTitle">The perfect road-trip companion.</h2>
           <div class="carbox">
-            <div class="carphoto">
-              <img
-                alt="Actual Volkswagen Tiguan 2021 photographed in the Turo listing provided by Mateo"
-                src="/images/tiguan.jpg"
-              />
+            <div class="car-gallery" aria-label="Tiguan photo gallery">
+              <figure class="car-frame">
+                <img
+                  id="carImage"
+                  src="/images/tiguan-exterior.webp"
+                  width="1619"
+                  height="971"
+                  alt="Blue Volkswagen Tiguan, exterior three-quarter view"
+                  loading="lazy"
+                />
+                <figcaption id="carCaption">
+                  01 / 03 · The road-trip ride
+                </figcaption>
+              </figure>
+              <div
+                class="car-thumbnails"
+                id="carThumbnails"
+                role="group"
+                aria-label="Choose a vehicle photo"
+              ></div>
+              <button class="car-zoom" id="carZoom" type="button">
+                View larger ↗
+              </button>
+              <p class="car-photo-note">
+                Vehicle photos · enhanced for clarity.
+              </p>
             </div>
             <div class="carcopy">
               <div class="eyebrow" style="color: #b9d3d5">
@@ -638,6 +687,15 @@
             </div>
           </div>
           <div class="seatbox">
+            <div class="invite-crew">
+              <img
+                src="/images/mateo-daniela-stickers.webp"
+                width="1448"
+                height="1086"
+                alt=""
+                loading="lazy"
+              /><span>Us + you?<br /><b>That’s the plan.</b></span>
+            </div>
             <span class="eyebrow">Let's make the reservations possible</span>
             <p style="margin: 11px 0 7px; font-size: 14px">
               Suggested contribution from each joining friend, after we agree on
@@ -678,8 +736,9 @@
           Not yet booked. Prices, events, weather conditions and destinations
           are tentative. Destination photographs are documentary images from
           earlier years, not a prediction of conditions on our travel dates.
-          Destination photos are included with this site; original sources and credits are linked below. Tiguan photo is from the
-          user-supplied Turo listing screenshot.
+          Destination photos are included with this site; original sources and
+          credits are linked below. Vehicle photos enhanced from images supplied
+          by Mateo. Portrait stickers made from Mateo and Daniela’s photos.
         </p>
         <div class="credits">
           <span>Photo credits:</span
@@ -712,6 +771,23 @@
         </div>
       </div>
     </footer>
+    <dialog
+      id="carLightbox"
+      class="car-lightbox"
+      aria-labelledby="lightboxTitle"
+    >
+      <div class="lightbox-header">
+        <h2 id="lightboxTitle">Our Tiguan</h2>
+        <button
+          id="closeCarLightbox"
+          type="button"
+          aria-label="Close vehicle photo"
+        >
+          Close ×
+        </button>
+      </div>
+      <img id="lightboxImage" alt="" />
+    </dialog>
     <div class="toast" id="toast" role="status">
       Invitation copied. Share the adventure! ❄️
     </div>
