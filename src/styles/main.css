@@ -170,7 +170,7 @@ img {
       rgba(8, 29, 43, 0.7) 43%,
       rgba(8, 29, 43, 0.12) 100%
     ),
-    url("/images/quebec.jpg");
+    url("/images/quebec-960.webp");
   background-position:
     center,
     right 44%;
@@ -876,7 +876,7 @@ input[type="range"] {
   .hero::before {
     background-image:
       linear-gradient(90deg, rgba(8, 29, 43, 0.88), rgba(8, 29, 43, 0.42)),
-      url("/images/quebec.jpg");
+      url("/images/quebec-960.webp");
     background-position:
       center,
       62% center;

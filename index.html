@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <meta name="color-scheme" content="light" />
     <meta
       name="description"
@@ -12,6 +15,7 @@
     <link rel="stylesheet" href="/src/styles/main.css" />
     <link rel="stylesheet" href="/src/styles/motion.css" />
     <link rel="stylesheet" href="/src/styles/gallery.css" />
+    <link rel="stylesheet" href="/src/styles/mobile.css" />
   </head>
   <body>
     <header class="topbar">
@@ -110,7 +114,14 @@
                 <img
                   loading="lazy"
                   alt="Real photograph of snow-covered Petit-Champlain in Quebec City"
-                  src="/images/quebec.jpg"
+                  src="/images/quebec-960.webp"
+                  srcset="
+                    /images/quebec-480.webp 480w,
+                    /images/quebec-960.webp 960w
+                  "
+                  sizes="(max-width: 600px) 110px, (max-width: 800px) calc(100vw - 40px), 360px"
+                  width="961"
+                  height="1280"
                 /><span class="photo-label">Dec 24–28 · 4 nights</span>
               </div>
               <div class="destbody">
@@ -127,7 +138,14 @@
                 <img
                   loading="lazy"
                   alt="Real photograph of Old Port in Montreal in December"
-                  src="/images/montreal.jpg"
+                  src="/images/montreal-960.webp"
+                  srcset="
+                    /images/montreal-480.webp 480w,
+                    /images/montreal-960.webp 960w
+                  "
+                  sizes="(max-width: 600px) 110px, (max-width: 800px) calc(100vw - 40px), 360px"
+                  width="4608"
+                  height="3072"
                 /><span class="photo-label">Dec 28–Jan 1 · 4 nights</span>
               </div>
               <div class="destbody">
@@ -144,7 +162,14 @@
                 <img
                   loading="lazy"
                   alt="Real photograph of Parliament Hill in Ottawa during winter"
-                  src="/images/ottawa.jpg"
+                  src="/images/ottawa-960.webp"
+                  srcset="
+                    /images/ottawa-480.webp 480w,
+                    /images/ottawa-960.webp 960w
+                  "
+                  sizes="(max-width: 600px) 110px, (max-width: 800px) calc(100vw - 40px), 360px"
+                  width="1200"
+                  height="1600"
                 /><span class="photo-label">Jan 1–2 · 1 night</span>
               </div>
               <div class="destbody">
@@ -398,7 +423,14 @@
               <img
                 alt="Actual winter view of Baie-Saint-Paul, Quebec"
                 loading="lazy"
-                src="/images/baie-saint-paul.jpg"
+                src="/images/baie-saint-paul-960.webp"
+                srcset="
+                  /images/baie-saint-paul-480.webp 480w,
+                  /images/baie-saint-paul-960.webp 960w
+                "
+                sizes="(max-width: 560px) calc(100vw - 40px), 550px"
+                width="1600"
+                height="1200"
               />
               <div class="towntext">
                 <h3>Baie-Saint-Paul</h3>
@@ -409,7 +441,14 @@
               <img
                 alt="Actual winter photograph of Montmorency Falls"
                 loading="lazy"
-                src="/images/montmorency.jpg"
+                src="/images/montmorency-960.webp"
+                srcset="
+                  /images/montmorency-480.webp 480w,
+                  /images/montmorency-960.webp 960w
+                "
+                sizes="(max-width: 560px) calc(100vw - 40px), 550px"
+                width="3008"
+                height="2000"
               />
               <div class="towntext">
                 <h3>Montmorency Falls</h3>
@@ -636,6 +675,11 @@
               </div>
             </div>
           </div>
+          <div
+            class="mobile-scenarios"
+            id="mobileScenarios"
+            aria-label="Budget comparisons by group size"
+          ></div>
           <div class="scenarios">
             <table>
               <caption id="scenarioCaption">
@@ -771,6 +815,26 @@
         </div>
       </div>
     </footer>
+    <nav class="mobile-nav" aria-label="Trip sections">
+      <a href="#itinerary"
+        ><span aria-hidden="true"
+          ><svg
+            viewBox="0 0 24 24"
+            width="22"
+            height="22"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path d="M6 19V8a4 4 0 0 1 8 0v8a4 4 0 0 0 8 0" />
+            <circle cx="6" cy="20" r="2" />
+            <circle cx="18" cy="4" r="2" /></svg></span
+        >Route</a
+      >
+      <a href="#car"><span aria-hidden="true">🚙</span>Our ride</a>
+      <a href="#budget"><span aria-hidden="true">$</span>Budget</a>
+      <a href="#join"><span aria-hidden="true">♡</span>Join us</a>
+    </nav>
     <dialog
       id="carLightbox"
       class="car-lightbox"

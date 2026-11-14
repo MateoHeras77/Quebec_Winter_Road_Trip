@@ -61,3 +61,7 @@ Las fotografías de destinos se distribuyen con el proyecto y conservan los enla
 ## Movimiento y galería
 
 El botón **Pause motion** detiene la nieve, el balanceo de stickers y el trazado animado de la ruta. La preferencia se recuerda en el navegador, si permite almacenamiento local. El sitio respeta `prefers-reduced-motion`, detiene animaciones al cambiar de pestaña y muestra el contenido completo al imprimir. La galería del auto admite teclado; la vista ampliada se cierra con **Escape** o el botón **Close**. Las fotos WebP se sirven localmente.
+
+## Uso en móvil
+
+Hasta 800 px aparece una navegación inferior con accesos al itinerario, auto, presupuesto e invitación, respetando el área segura del teléfono. Hasta 600 px los escenarios de presupuesto se presentan como tarjetas y la portada y los destinos usan una distribución compacta. Las fotografías de destinos tienen variantes WebP de 480 y 960 px con selección automática según el tamaño de pantalla. Los controles principales tienen una altura mínima de 44 px. El diseño de impresión mantiene la tabla de comparación.

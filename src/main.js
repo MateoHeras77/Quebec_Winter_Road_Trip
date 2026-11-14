@@ -1,6 +1,7 @@
 import { trip, directionsUrl } from "./data/trip.js";
 import { initializeMotion } from "./lib/motion.js";
 import { initializeGallery } from "./lib/gallery.js";
+import { initializeNavigation } from "./lib/navigation.js";
 import {
   calculateBudget,
   money,
@@ -46,6 +47,12 @@ function update() {
   $("scenarioCaption").textContent = two
     ? "Two rooms for groups of 3–4; one room for 1–2 travelers"
     : "One shared room, subject to hotel occupancy limits";
+  $("mobileScenarios").innerHTML = [1, 2, 3, 4]
+    .map((n) => {
+      const b = calculateBudget(n, nightly, two);
+      return `<article class="scenario-card ${n === count ? "selected" : ""}"><h3>${n} ${n === 1 ? "traveler" : "travelers"}${n === count ? "<span>Selected</span>" : ""}</h3><dl><div><dt>Per person / day</dt><dd>${money(b.perDay)}</dd></div><div><dt>Per person total</dt><dd>${money(b.perPerson)}</dd></div><div><dt>Group total</dt><dd>${money(b.total)}</dd></div></dl></article>`;
+    })
+    .join("");
   $("scenarioRows").innerHTML = [1, 2, 3, 4]
     .map((n) => {
       const b = calculateBudget(n, nightly, two);
@@ -153,3 +160,4 @@ $("copyInvite").addEventListener("click", async () => {
 update();
 initializeMotion();
 initializeGallery();
+initializeNavigation();
